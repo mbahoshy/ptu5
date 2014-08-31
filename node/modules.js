@@ -1,4 +1,5 @@
-var customer = require('../node/models/customer');
+var customer = require('../node/models/customer'),
+    _ = require("underscore");
 
 function newCustomer (req, res) {
     // var nameFirst = req.param("nameFirst"),
@@ -24,11 +25,18 @@ function returnCustomers (req, res) {
 }
 
 
-function customerId (req, res) {
+function getCustomer (req, res) {
     var id = req.param("id");
+
     console.log(id);
     customer.findById(id, function(err, data){
-        res.json(data);
+        var returnObject = {};
+        if(req.param("property")) {
+          returnObject = data[req.param("property")];
+        } else {
+          returnObject = data;
+        }
+        res.json(returnObject);
     });
 }
 
@@ -123,7 +131,7 @@ function customersearch (req, res){
 exports.addpm = addpm;
 exports.findPM = findPM;
 exports.newCustomer = newCustomer;
-exports.customerId = customerId;
+exports.getCustomer = getCustomer;
 exports.returnCustomers = returnCustomers;
 exports.newEquipment = newEquipment;
 exports.customersearch = customersearch;

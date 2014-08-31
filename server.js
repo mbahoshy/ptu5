@@ -4,8 +4,8 @@ var path = require("path"),
 
 var app = express ();
 
-app.use(express.static(path.join(__dirname)));
-// app.use(express.static(path.join(__dirname, 'public/pages')));
+//app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, 'public')));
 // var passport = require("passport"); // require passport
 // app.use(express.cookieParser());
 // app.use(express.bodyParser());

@@ -17,7 +17,7 @@ module.exports = function (app) {
 
     app.get('/api/tech/customer', mod.returnCustomers);
 
-    app.get('/api/tech/customerid/:id', mod.customerId);
+    app.get('/api/tech/customer/:id/:property?', mod.getCustomer);
 
     app.post('/api/tech/equipment/:id', mod.newEquipment);
 

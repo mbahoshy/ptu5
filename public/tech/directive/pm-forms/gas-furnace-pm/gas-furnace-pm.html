@@ -1,0 +1,59 @@
+<div>
+  <form>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Pressure Switch</label>
+        <input type="checkbox" ng-model="pm.pressureSwitch" />
+      </div>
+      <div class="form-group">
+        <label>Fan Relay</label>
+        <input type="checkbox" ng-model="pm.fanRelay" />
+      </div>
+
+      <div class="form-group">
+        <label>Flame Sensor</label>
+        <input type="checkbox" ng-model="pm.flameSensor" />
+      </div>
+      <div class="form-group">
+        <label>Blower Check</label>
+        <input type="checkbox" ng-model="pm.blowerCheck" />
+      </div>
+      <div class="form-group">
+        <label>Heat Exchanger</label>
+        <input type="checkbox" ng-model="pm.heatEx" />
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>HSI</label>
+        <input type="text" class="form-control" ng-model="pm.hsi" />
+      </div>
+      <div class="form-group">
+        <label>Capacitor</label>
+        <span>Rated:</span>
+        <input type="text" class="form-control" ng-model="pm.capRated" />
+        <span>Actual:</span>
+        <input type="text" class="form-control" ng-model="pm.cap" />
+      </div>
+
+      <div class="form-group">
+        <label>Blower Amps</label>
+        <input type="text" class="form-control" ng-model="pm.blowerAmps" />
+      </div>
+
+      <div class="form-group">
+        <label>Gas Pressure</label>
+        <span>High:</span>
+        <input type="text" class="form-control" ng-model="pm.gasHigh" />
+        <span>Low:</span>
+        <input type="text" class="form-control" ng-model="pm.gasLow" />
+
+      </div>
+
+    </div>
+
+  </form>
+
+</div>

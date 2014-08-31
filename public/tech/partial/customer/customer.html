@@ -1,0 +1,45 @@
+<div class="col-md-12" ng-controller="CustomerCtrl">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+     <h3>{{customer.nameLast}}, {{customer.nameFirst}}</h3>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="bg-info" ng-class="{'bg-primary': equipmentFilter == equipment.system}" ng-click="filterEquipment(equipment)" ng-repeat='equipment in customer.equipment'>
+        {{equipment.system}}
+        {{equipment.make}}
+        {{equipment.type}}
+        <a href='' class="btn btn-default">View History</a>
+        <a href='' class="btn btn-default">Create PM</a>
+      </div>
+      <a href="#/add-equipment/{{customer._id}}" class="btn btn-success">Add Equipment</a>
+    </div>
+    <div class="col-md-8">
+      <table class="table table-striped table-hover">
+        <tr>
+          <th>Equipment Type</th>
+          <th>Make</th>
+          <th>Model</th>
+          <th>Last Serviced</th>
+        <tr>
+        <tr ng-click='pmClick(pm)' ng-repeat='pm in pmDisplay'>
+          <td>{{pm.type}}</td>
+          <td>{{pm.make}}</td>
+          <td>{{pm.model}}</td>
+          <td>{{pm.date}}</td>
+        </tr>
+      </table>
+    </div>
+
+
+  <div class="row">
+
+    </div>
+
+  </div>
+
+
+</div>

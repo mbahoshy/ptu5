@@ -1,0 +1,180 @@
+@import "bower_components/bootstrap/less/bootstrap.less";
+//@import "bower_components/bootstrap/less/theme.less";
+@import "bower_components/font-awesome/less/font-awesome.less";
+@fa-font-path: "bower_components/font-awesome/fonts";
+
+/* Component LESS */
+@import "user/user.less";
+@import "common/common";
+@import "tech/tech.less";
+/* Add Component LESS Above */
+
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel a { cursor: pointer; }
+
+/* Personal preference for BS modal.  The LESS below makes the backdrop white and
+   causes the modal to fade in rather than slide in. */
+//@modal-backdrop-bg: white;
+//.modal {
+//	&.fade {
+//		.transition(opacity .3s);
+//	}
+//	&.fade .modal-dialog {
+//		.translate(0,0);
+//	}
+//}
+
+@base: #CCCCCC;
+@hover: red;
+
+@navcolor: rgba(25, 25, 88, 0.69);
+@navTabs: rgba(255, 255, 255, 0.50);
+
+@header: rgb(36, 36, 36);
+@offWhite: #DBDBDB;
+
+
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.table-styling (@width: 80%, @margin:10%) {
+  border-collapse:collapse;
+  width: @width;
+  float: left;
+  margin:0 @margin;
+  td, th {
+    padding: 10px;
+  }
+  tr:nth-child(even) {
+    background-color: @base;
+  }
+  tr:hover {
+    background-color: @hover;
+  }
+
+}
+
+.form-styling () {
+  width:100%;
+  input, select {
+    padding:5px 10px;
+    float: left;
+  }
+
+}
+
+
+
+
+.search-container {
+  float: left;
+  width: 100%;
+}
+
+.search-container form {
+  .form-styling;
+}
+
+.search-container input {
+  width: 60%;
+}
+
+.search-container input[type='submit'] {
+  width: 10%;
+}
+
+.search-container select {
+  width: 10%;
+}
+
+.customer-listings {
+  .table-styling;
+}
+
+.customer-info-container {
+  float: left;
+  width:100%;
+}
+
+.pm-history-container {
+  .table-styling (50%, 5%);
+}
+
+.equipment-container {
+  width:30%;
+  margin: 0 5%;
+  float: left;
+}
+
+.equipment {
+  width: 100%;
+  float: left;
+  background-color: @base;
+  margin: 10px 0;
+  .rounded-corners;
+}
+
+
+
+body {
+  margin:0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  min-width: 340px;
+  margin: 0 auto;
+}
+
+
+#header {
+  width:100%;
+  float: left;
+  background-color: @header;
+}
+
+#header a {
+  text-align: center;
+  text-decoration: none;
+  color: @offWhite;
+}
+
+.nav-wrapper {
+  width: 100%;
+  float: left;
+  background-color: @navcolor;
+
+}
+
+#navigation {
+  width:90%;
+  margin:0 5%;
+  float: left;
+  span {
+    min-width:100px;
+    float: left;
+    padding:10px 10px;
+    background-color: @navTabs;
+    text-align: center;
+    margin: 0 1px;
+    img {
+      width:20px;
+      float:right;
+      margin-left: 15px;
+      opacity: .9;
+      border-radius: 10px;
+    }
+    img:hover {
+      background-color: @hover;
+    }
+  }
+  span:hover {
+    cursor: pointer;
+  }
+  .active-nav {
+    background-color: #FFFFFF;
+  }
+}

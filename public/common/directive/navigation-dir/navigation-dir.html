@@ -1,0 +1,10 @@
+<div class='nav-wrapper'>
+    <div class='wrapper'>
+        <div ng-controller='navigationController' id='navigation'>
+            <span ng-click='switchTab(0)'>Home</span>
+      <span class='{{tab.class}}' ng-click='switchTab(tab, $event)' ng-repeat='tab in tabs'>
+        {{tab.title}}<img ng-click='closeTab(tab)' src='/imgs/close.png'>
+      </span>
+        </div>
+    </div>
+</div>

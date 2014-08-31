@@ -1,0 +1,46 @@
+<div class="col-md-12" ng-controller="AddCustomerCtrl">
+    <form novalidate ng-submit="addCustomer(addCustomerForm)" name="addCustomerForm">
+      <div class="col-md-4">
+        <div class="form-group" ng-class="{'has-error': addCustomerForm.nameFirst.$error.required && addCustomerForm.showErrors}">
+            <label>First name:</label>
+            <input class="form-control" name="nameFirst" ng-model='customer.nameFirst' type='text' required>
+            <span class="help-block" ng-show="addCustomerForm.nameFirst.$error.required && addCustomerForm.showErrors">First name is required.</span>
+        </div>
+        <div class="form-group" ng-class="{'has-error': addCustomerForm.nameLast.$error.required && addCustomerForm.showErrors}">
+          <label>Last name:</label>
+          <input class="form-control" name="nameLast" ng-model='customer.nameLast' type='text' required>
+          <span class="help-block" ng-show="addCustomerForm.nameLast.$error.required && addCustomerForm.showErrors">Last name is required.</span>
+        </div>
+        <div class="form-group" ng-class="{'has-error': addCustomerForm.email.$error.required && addCustomerForm.showErrors}">
+          <label>Email:</label>
+          <input class="form-control" name="email" ng-model='customer.email' type='text' required>
+          <span class="help-block" ng-show="addCustomerForm.email.$error.required && addCustomerForm.showErrors">Email is required.</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group" ng-class="{'has-error': addCustomerForm.street.$error.required && addCustomerForm.showErrors}">
+          <label>Street:</label>
+          <input class="form-control" name="street" ng-model='customer.address.street' type='text' required>
+          <span class="help-block" ng-show="addCustomerForm.street.$error.required && addCustomerForm.showErrors">Street address is required.</span>
+        </div>
+        <div class="form-group" ng-class="{'has-error': addCustomerForm.city.$error.required && addCustomerForm.showErrors}">
+          <label>City:</label>
+          <input class="form-control" name="city" ng-model='customer.address.city' type='text' required>
+          <span class="help-block" ng-show="addCustomerForm.city.$error.required && addCustomerForm.showErrors">City is required.</span>
+        </div>
+        <div class="form-group col-md-6" ng-class="{'has-error': addCustomerForm.state.$error.required && addCustomerForm.showErrors}">
+          <label>State:</label>
+          <input class="form-control" name="state" ng-model='customer.address.zip' type='text' required>
+          <span class="help-block" ng-show="addCustomerForm.state.$error.required && addCustomerForm.showErrors">State is required.</span>
+        </div>
+        <div class="form-group col-md-6" ng-class="{'has-error': addCustomerForm.zip.$error.required && addCustomerForm.showErrors}">
+          <label>Zip:</label>
+          <input class="form-control" name="zip" ng-model='customer.address.zip' type='text' required>
+          <span class="help-block" ng-show="addCustomerForm.zip.$error.required && addCustomerForm.showErrors">Zip is required.</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-success pull-right" type='submit'>Add Customer</button>
+      </div>
+    </form>
+</div>
